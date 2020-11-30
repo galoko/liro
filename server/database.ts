@@ -94,6 +94,26 @@ class Database {
 
         return userInfo
     }
+
+    public createBoard(): BoardInfo {
+        const boardInfo = {
+            boardId: this.nextId(),
+            history: [],
+        }
+
+        this.data.boards.push(boardInfo)
+        this.save()
+
+        return boardInfo
+    }
+
+    public getOrCreateFirstBoard(): BoardInfo {
+        if (this.data.boards.length === 0) {
+            return this.createBoard()
+        } else {
+            return this.data.boards[0]
+        }
+    }
 }
 
 const database = new Database()

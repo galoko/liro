@@ -39,6 +39,12 @@ export default class SomeProtocol implements LiroProtocol {
         return data as UserInfo
     }
 
+    async getOrCreateFirstBoard(): Promise<BoardInfo> {
+        const response = await fetch(`${this.httpServerUrl}/board/first`)
+        const data = await response.json()
+        return data as BoardInfo
+    }
+
     private sendPacket(ws: WebSocket, packet: PacketHeader): void {
         this.boardWebSocketConnection?.send(JSON.stringify(packet))
     }

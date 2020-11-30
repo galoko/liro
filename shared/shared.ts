@@ -43,5 +43,7 @@ export type BoardHistoryStep = {
 };
 
 export type BoardInfo = {
+    boardId: ID;
+
     history: BoardHistoryStep[]
 }

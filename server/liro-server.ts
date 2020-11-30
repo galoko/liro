@@ -27,6 +27,11 @@ export function startLiroServer(): void {
         }
     })
 
+    app.get("/board/first", (req, res) => {
+        const boardInfo = database.getOrCreateFirstBoard()
+        res.json(boardInfo)
+    })
+
     const wss = new WebSocket.Server({ port: 3112 })
 
     wss.on("connection", function (ws, upgradeReq) {

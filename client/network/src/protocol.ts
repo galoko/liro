@@ -12,6 +12,9 @@ export default interface LiroProtocol {
     // действия
     registerNewUser(desc: NewUserDescription): Promise<Token>
     getUserInfo(token: Token): Promise<UserInfo>
+
+    getOrCreateFirstBoard(): Promise<BoardInfo>
+
     enterBoard(
         boardId: ID,
         lastChangeId: ID,

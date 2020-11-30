@@ -28,6 +28,15 @@ async function main(): Promise<void> {
     )
 
     const userInfo = await getCurrentUser(protocol)
+
+    let boardId = userInfo.currentBoardId
+    if (boardId === null) {
+        boardId = (await protocol.getOrCreateFirstBoard()).boardId
+    }
+
+    protocol.enterBoard(boardId, 0, historyStep => {
+        //
+    })
 }
 
 main()
