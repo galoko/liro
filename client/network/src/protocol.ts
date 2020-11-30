@@ -17,4 +17,5 @@ export default interface LiroProtocol {
         lastChangeId: ID,
         changes: (historyStep: BoardHistoryStep) => void
     ): void
+    exitBoard(): void
 }

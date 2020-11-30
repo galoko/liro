@@ -28,7 +28,6 @@ async function main(): Promise<void> {
     )
 
     const userInfo = await getCurrentUser(protocol)
-    debugger
 }
 
 main()

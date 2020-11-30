@@ -9,7 +9,7 @@ import {
 } from "../../../shared/shared"
 import { PacketHeader, RequestChangesAndSubscribeToNewChanges } from "../../../shared/someProtocol"
 import LiroProtocol from "./protocol"
-const WebSocket = require("ws")
+import WebSocket from "ws"
 
 export default class SomeProtocol implements LiroProtocol {
     private httpServerUrl: string
@@ -65,6 +65,7 @@ export default class SomeProtocol implements LiroProtocol {
             })
 
             ws.on("close", () => {
+                // reconnect in 2 seconds
                 setTimeout(() => {
                     if (this.boardWebSocketConnection === ws) {
                         createWebSocket()
