@@ -20,9 +20,6 @@ async function main(): Promise<void> {
         throw new Error("Cannot find root element.")
     }
 
-    debugger
-    console.log(LiroProtocols)
-
     // вешаем на него выбранный рендер
     const render = new LiroCore.LiroCanvasRender(root)
     const protocol = new LiroProtocols.SomeProtocol(
@@ -31,6 +28,7 @@ async function main(): Promise<void> {
     )
 
     const userInfo = await getCurrentUser(protocol)
+    debugger
 }
 
 main()

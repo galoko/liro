@@ -34,6 +34,8 @@ const distConfig = Object.assign({}, config, {
     output: {
         filename: "./dist/[name].js",
         path: __dirname,
+        library: "LiroNetwork",
+        libraryTarget: "umd",
     },
 })
 
