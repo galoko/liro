@@ -1,19 +1,9 @@
-class LiroBaseObject {
-    public render(): void {
-        console.log("render call")
-    }
+import LiroBaseObject from "./baseObject"
+import { LiroBoard } from "./board"
+import LiroCanvasRender from "./canvasRender"
 
-    public serialize(): object {
-        return {}
-    }
-
-    public deserialize(data: object): void {
-        //
-    }
+export default class LiroCore {
+    public static LiroBaseObject = LiroBaseObject
+    public static LiroBoard = LiroBoard
+    public static LiroCanvasRender = LiroCanvasRender
 }
-
-const LiroCore = {
-    LiroBaseObject: LiroBaseObject,
-}
-
-export default LiroCore
